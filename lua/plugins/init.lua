@@ -220,6 +220,15 @@ local default_plugins = {
 
   -- file managing , picker etc
   {
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      -- calling `setup` is optional for customization
+      require("fzf-lua").setup {}
+    end,
+  },
+  {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     init = function()
@@ -233,7 +242,6 @@ local default_plugins = {
       require("nvim-tree").setup(opts)
     end,
   },
-
   {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
